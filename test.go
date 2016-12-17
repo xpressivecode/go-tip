@@ -8,5 +8,7 @@ import (
 func main() {
 	fmt.Println("foo")
 
-	ioutil.ReadFile("foobar.txt")
+	err := ioutil.ReadFile("foobar.txt")
+
+	fmt.Println(err)
 }
