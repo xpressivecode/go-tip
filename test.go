@@ -3,15 +3,20 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"net/http"
 	"strconv"
 )
 
 func main() {
 	fmt.Println("foo")
 
-	err := ioutil.ReadFile("foobar.txt")
+	err := fmt.Printf("%v", ioutil.ReadFile("foobar.txt"))
 
 	fmt.Println(err)
+
+	af := http.StatusOK
+
+	fmt.Printf(af)
 
 	strconv.AppendBool(dst, b)
 
