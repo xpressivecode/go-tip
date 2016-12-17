@@ -10,7 +10,7 @@ import (
 func main() {
 	fmt.Println("foo")
 
-	err := fmt.Printf("%v", ioutil.ReadFile("foobar.txt"))
+	_, err := fmt.Printf("%v", ioutil.ReadFile("foobar.txt"))
 
 	fmt.Println(err)
 
@@ -25,6 +25,9 @@ func main() {
 }
 
 type foo struct {
+	Name    string
+	IsValid bool
+	Age     int
 }
 
 func (f *foo) DoSomething() string {
