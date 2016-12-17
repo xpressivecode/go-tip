@@ -11,5 +11,22 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "atom-package-deps": "^4.0.1"
+  },
+  "package-deps": [
+    "go-config",
+    "go-get"
+  ],
+  "consumedServices": {
+    "go-config": {
+      "versions": {
+        "^1.0.0": "consumeGoconfig"
+      }
+    },
+    "go-get": {
+      "versions": {
+        "^1.0.0": "consumeGoget"
+      }
+    }
   }
 }
