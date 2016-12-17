@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -22,12 +23,20 @@ func main() {
 
 	f := &foo{}
 	f.DoSomething()
+
+	ff := newFoo()
+
+	log.Print(ff)
 }
 
 type foo struct {
 	Name    string
 	IsValid bool
 	Age     int
+}
+
+func newFoo() *foo {
+	return &foo{}
 }
 
 func (f *foo) DoSomething() string {
