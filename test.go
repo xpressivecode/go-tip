@@ -22,6 +22,7 @@ func main() {
 	strconv.AppendBool(dst, b)
 
 	f := &foo{}
+
 	f.DoSomething()
 
 	ff := newFoo()
@@ -37,6 +38,10 @@ type foo struct {
 
 func newFoo() *foo {
 	return &foo{}
+}
+
+func (f *foo) DoSomething2() {
+
 }
 
 func (f *foo) DoSomething() string {
