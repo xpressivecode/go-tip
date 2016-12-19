@@ -1,5 +1,5 @@
 # go-tip
-This package adds the ability to inspect variables, functions, structs etc. by hovering over them.
+This package adds the ability to inspect variables, functions, types etc., by hovering over them.
 * Github: https://github.com/foobar/go-tip
 * Atom: https://atom.io/packages/go-tip
 
