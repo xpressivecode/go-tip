@@ -3,6 +3,141 @@
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
+@import "syntax-variables";
 
-.go-tip {
+@font-size-small: .9em;
+@type-icon-font-size: 1em;
+@type-letter-icon-font-size: @font-size-small;
+@row-line-height: 2em;
+@item-padding: .75em;
+@item-side-padding: .6em;
+
+atom-overlay.go-tip {
+  margin-top: -4em;
+  margin-left: -6em;
+
+  go-tip-container.popover-list.select-list{
+    display: block;
+    width:auto;
+  }
+  ol.list-group {
+    margin-top: 0;
+    display: table;
+    margin-right: 10px; // Needed to prevent horizontal scrolling when right label is too long
+
+    li {
+      display: table-row;
+      color: @text-color;
+      line-height: @row-line-height !important;
+
+      > span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+
+
+      .left-label {
+        text-align: right;
+        padding-left: @item-padding;
+        padding-right: @item-padding;
+        vertical-align: middle;
+
+        font-size: @font-size-small;
+        color: @text-color-subtle;
+
+        &:empty {
+          padding-right: 0;
+        }
+      }
+
+      .right-label {
+        padding-right: @item-padding;
+        font-size: @font-size-small;
+        color: @text-color-subtle;
+
+        &:empty {
+          padding-right: 0;
+        }
+      }
+
+      .word-container {
+        padding-right: @item-padding;
+      }
+
+
+
+      &:after {
+        clear: both;
+        display: block;
+        content: ' ';
+      }
+
+      .icon {
+        display: block;
+        width: @row-line-height;
+        line-height: @row-line-height;
+        text-align: center;
+        font-style: normal;
+        font-weight: bold;
+
+        color: @text-color-subtle;
+        background: fadeout(@text-color, 90%);
+
+        &:empty { display: none; }
+        > *::before {
+          font-size: @type-icon-font-size;
+          width: @type-icon-font-size;
+          height: @type-icon-font-size;
+        }
+
+        .icon-letter {
+          // I'm failing to vert center these letters. So shift them up...
+          position: relative;
+          top: -.1em;
+          font-size: @type-letter-icon-font-size;
+          line-height: @type-letter-icon-font-size;
+        }
+      }
+
+
+      .make-type-icon(attribute, @syntax-color-attribute);
+      .make-type-icon(builtin, @syntax-color-keyword);
+      .make-type-icon(class, @syntax-color-class);
+      .make-type-icon(constant, @syntax-color-constant);
+      .make-type-icon(function, @syntax-color-function);
+      .make-type-icon(import, @syntax-color-import);
+      .make-type-icon(keyword, @syntax-color-keyword);
+      .make-type-icon(method, @syntax-color-method);
+      .make-type-icon(module, @syntax-color-import);
+      .make-type-icon(mixin, @syntax-color-class);
+      .make-type-icon(package, @syntax-color-import);
+      .make-type-icon(property, @syntax-color-property);
+      .make-type-icon(require, @syntax-color-import);
+      .make-type-icon(snippet, @syntax-color-snippet);
+      .make-type-icon(tag, @syntax-color-tag);
+      .make-type-icon(type, @syntax-color-class);
+      .make-type-icon(value, @syntax-color-value);
+      .make-type-icon(literal, @syntax-color-value);
+      .make-type-icon(variable, @syntax-color-variable);
+      .make-type-icon(selector, @syntax-color-attribute);
+      .make-type-icon(pseudo-selector, @syntax-color-attribute);
+    }
+  }
+}
+
+.make-type-icon(@type, @color) {
+  .icon.@{type} {
+    color: @color;
+    background: fadeout(@color, 80%)
+  }
+}
+.make-type-icon(@type, @color)
+when (hsvvalue(@color) - hsvvalue(@overlay-background-color) > -20)
+and (hsvvalue(@color) - hsvvalue(@overlay-background-color) < 20) {
+  .icon.@{type} {
+    @corrected-color: contrast(@overlay-background-color, darken(@color, 30%), lighten(@color, 30%));
+    color: @corrected-color;
+    background: fadeout(@corrected-color, 80%);
+  }
 }
