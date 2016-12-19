@@ -32,7 +32,7 @@ func main() {
 
 type foo struct {
 	Name    string `json:"name" valid:"true"`
-	IsValid bool   `json:"valid"`
+	IsValid []bool `json:"valid"`
 	Age     int
 }
 
