@@ -31,8 +31,8 @@ func main() {
 }
 
 type foo struct {
-	Name    string
-	IsValid bool
+	Name    string `json:"name"`
+	IsValid bool   `json:"valid"`
 	Age     int
 }
 
