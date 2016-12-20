@@ -2,11 +2,18 @@
   "name": "go-tip",
   "main": "./lib/go-tip",
   "version": "1.0.0",
-  "description": "A short description of your package",
+  "description": "Adds the ability to inspect variables, functions, types, etc., by hovering over them.",
   "keywords": [
+    "go",
+    "golang",
+    "inspect",
+    "hover",
+    "guru"
   ],
-  "repository": "https://github.com/atom/go-tip",
-  "license": "MIT",
+  "author": "mike fitzgerald",
+  "hmoepage": "https://atom.io/packages/go-tip",
+  "repository": "https://github.com/xpressivecode/go-tip",
+  "license": "Apache-2.0",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
