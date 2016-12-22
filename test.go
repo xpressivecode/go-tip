@@ -18,7 +18,6 @@ func main() {
 	af := http.StatusOK
 
 	fmt.Printf(af)
-  
 
 	strconv.AppendBool(dst, b)
 
