@@ -1,6 +1,6 @@
 {
   "name": "go-tip",
-  "main": "./lib/go-tip",
+  "main": "./lib/main",
   "version": "2.2.0",
   "description": "Adds the ability to inspect variables, functions, types, etc., by hovering over them.",
   "keywords": [

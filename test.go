@@ -2,24 +2,16 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
-	"strconv"
 )
 
 func main() {
 	fmt.Println("foo")
 
-	_, err := fmt.Printf("%v", ioutil.ReadFile("foobar.txt"))
-
-	fmt.Println(err)
-
 	af := http.StatusOK
 
-	fmt.Printf(af)
-
-	strconv.AppendBool(dst, b)
+	fmt.Printf("%v", af)
 
 	f := &foo{}
 
